@@ -1,50 +1,81 @@
-var questions = [
+var timeEl = document.querySelector("p.time");
+var secondsLeft = 75;
+var scoreEl = document.querySelector("#score");
+
+const introEl = document.querySelector("#intro");
+const questionsEl = document.querySelector("#questions");
+var questionEl = document("#question");
+var questionCount = 0;
+const rightWrongEL = document.querySelector("#right-wrong");
+
+const finalEl = document.querySelector("#final");
+var initialInput = document.querySelector("#score-list");
+var scoreList = [];
+
+const startBtn = document.querySelector("#start");
+const ansBtn = document.querySelectorAll("#button.ansBtn");
+const ans1Btn = document.querySelector("#answer1");
+const ans2Btn = document.querySelector("#answer2");
+const ans3Btn = document.querySelector("#answer3");
+const ans4Btn = document.querySelector("#answer4");
+const submitScoreBtn = document.querySelector("#submit-score");
+const goBackBtn = document.querySelector("#goback");
+const clearScoresBtn = document.querySelector("#clearscores");
+const viewScoresBtn = document.querySelector("#view-scores");
+
+
+
+
+const questions = [
     {
         title: "Commonly used data types DO NOT include:",
-        choices: ["strings", "booleans", "alerts", "numbers"],
-        answer: "alerts"
+        choices: ["1.strings", "2.booleans", "3.alerts", "4.numbers"],
+        correctAnswer: "2"
     },
     {
         title: "The condition in an if / else statement is enclosed within ____.",
-        choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-        answer: "parentheses"
+        choices: ["1.quotes", "2.curly brackets", "3.parentheses", "4.square brackets"],
+        correctAnswer: "3"
     },
     {
         title: "Arrays in Javascript can be used to store ____.",
-        choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-        answer: "all of the above"
+        choices: ["1.numbers and strings", "2.other arrays", "3.booleans", "4.all of the above"],
+        correctAnswer: "4"
     },
     {
         title: "String values must be enclosed within ____ when being assigned to variables.",
-        choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-        answer: "quotes"
+        choices: ["1.commas", "2.curly brackets", "3.quotes", "4.parenthesis"],
+        correctAnswer: "3"
     },
     {
         title: "A very useful tool for used during development and debugging for printing content to the debugger is:",
-        choices: ["Javascript", "terminal / bash", "for loops", "console log"],
-        answer: "console log"
+        choices: ["1.Javascript", "2.terminal / bash", "3.for loops", "4.console log"],
+        correctAnswer: "3"
     },
 ];
 
-var score = 0
-var questionAns = 0 ;
+function setTime() {
+    var timerInterval = setInterval(function (){
+        secondsLeft--;
+        timeEl.textContent = 'Time:${secondsLeft}s';
 
-var currentTime = document.querySelector("#currentTime");
-var timer = document.querySelector("startTime");
-var questionsDiv = document.querySelector("#questionsDiv");
-var wrapper = document.querySelector("#wrapper");
+        if (secondsLeft === 0 || questionCount === questions.length) {
+            clearInterval(timerInterval);
+            questionsEl.getElementsByClassName.display ="none";
+            finalEl.style.display = "block";
+            scoreEl.textContent = secondsLeft;
+        }
+    }, 1000);
+}
 
-var secondsLeft = 75;
-var holdInverval = 0;
-var penalty = 10;
+function checkAnswer(event) {
+    event.preventDefault();
+    
+    rightWrongEL.style.display = "block";
+    var p = document.createElement("p");
+    rightWrongEL.appendChild(p);
+    setTimeout( function () {
+        p.style.display ="none"
+    })
 
-timer.addEventListener("click", fuction () {
-    if (holdInverval === 0){
-        holdInverval =  setInterval (function (){
-            secondsLeft --;
-            currentTime.textContent = "Times Up";
-            
-        }, 1000);
-    }
-    return(questionAns);
-});
+}

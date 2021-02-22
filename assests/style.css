@@ -1,8 +1,31 @@
-body {
-    background-color: lightblue;
+* {
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
-.btn{    
-    border-radius: 5px;
-    color: orange;
+body {
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    background-color: lightskyblue;
+}
+
+ul.nobullets {
+    list-style-type: none;
+}
+
+#questions,
+#final,
+#highscores,
+#right-wrong {
+    display: none;
+}
+
+.ansBtn,
+.ansBtn:hover,
+.ansBtn:active,
+.ansBtn:focus,
+.ansBtn:active:focus {
+    box-shadow: none;
+    outline: none;
+    background-color: green;
 }

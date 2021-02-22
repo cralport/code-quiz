@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assests/style.css">
+
+
+    <title>Code Quiz</title>
+</head>
+
+<body>
+    <div class="justify-content-space-evenly">
+        <header class="row">
+            <div class="col-md-6" id="highscore">
+                <a href="">View Highscores</a>
+            </div>
+            <div class="col-md-6" id="timer">
+                Time: <span id="time">0</span>
+            </div>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="wrapper"></div>
+        <div class="container col-1 text-center">
+            <div class="row">
+                <div class="row">
+                    <h1 class="heading">Code Quiz</h1>
+                </div>
+                <div class="row">
+                    <div>
+                        <p>
+                            Here is a short JavaScript coding quiz for all to try. It is important to know that
+                            incorrect
+                            answers will subtract 10 seconds from your time/score.
+                        </p>
+                    </div>
+                    <div class="btn">
+                        <div class="row">
+                            <button class="btn" id="startTime">Start Quiz</button>
+                            <button class="btn" id="veiw-highscore">View High Scores</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="currentTime"></div>
+            <div id="questionDiv"></div>
+
+            <script src="/assests/script.js"></script>
+</body>
+
+</html>

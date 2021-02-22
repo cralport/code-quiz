@@ -55,27 +55,46 @@ const questions = [
 ];
 
 function setTime() {
-    var timerInterval = setInterval(function (){
+    var timerInterval = setInterval(function () {
         secondsLeft--;
         timeEl.textContent = 'Time:${secondsLeft}s';
 
         if (secondsLeft === 0 || questionCount === questions.length) {
             clearInterval(timerInterval);
-            questionsEl.getElementsByClassName.display ="none";
+            questionsEl.getElementsByClassName.display = "none";
             finalEl.style.display = "block";
             scoreEl.textContent = secondsLeft;
         }
     }, 1000);
 }
 
+funtion startQuiz() {
+    introEl.style.display = "none";
+    questionEl.style.display = "block";
+    questionCount = 0;
+
+    setTime();
+    setQuestion(questionCount);
+}
+
+function setQuestion(id) {
+    if (id < questions.length) {
+        questionEl.textContent = questions[id].questions;
+        ans1Btn.textContent = question[id].answer[0];
+        ans2Btn.textContent = question[id].answer[1];
+        ans3Btn.textContent = question[id].answer[2];
+        ans4Btn.textContent = question[id].answer[3];
+    }
+}
+
 function checkAnswer(event) {
     event.preventDefault();
-    
+
     rightWrongEL.style.display = "block";
     var p = document.createElement("p");
     rightWrongEL.appendChild(p);
-    setTimeout( function () {
-        p.style.display ="none"
+    setTimeout(function () {
+        p.style.display = "none"
     })
 
 }
